@@ -1,0 +1,15 @@
+{
+  "name": "npm-mod",
+  "version": "1.0.0",
+  "description": "this is all about NPM modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vipul Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "validator": "^13.9.0"
+  }
+}

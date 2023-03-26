@@ -6,5 +6,11 @@ const add = (a, b) => {
 const sub = (a, b) => {
     return a - b;
 }
-module.exports.add = add;
-module.exports.sub = sub;
+
+// this 
+
+// module.exports.add = add;
+// module.exports.sub = sub;
+// or this 
+
+module.exports = { add, sub };
