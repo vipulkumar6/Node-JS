@@ -1,13 +1,9 @@
 const fs = require("fs");
 const http = require("http");
 
-
-
 const server = http.createServer((req, res) => {
     // res.end("Yout Response")
 });
-
-
 
 server.on('request', (req, res) => {
     fs.readFile("input.txt", (err, data) => {
