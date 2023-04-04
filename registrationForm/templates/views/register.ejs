@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+      body {
+        background: #fff;
+        font-family: "PT Sans", sans-serif;
+      }
+      .register_wrap {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      .register_wrap .box {
+        height: 400px;
+        width: 450px;
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin: 20px;
+        border-radius: 8px;
+      }
+
+      .register_wrap input {
+        border: none;
+        outline: none;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #eee;
+        margin: 15px;
+        border-radius: 4px;
+      }
+      .register_wrap h1 {
+        text-align: center;
+        margin: 20px 10px;
+      }
+      .register_wrap .inputs {
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+      }
+      .register_wrap .btns {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0;
+      }
+      button {
+        padding: 13px 16px;
+        margin-left: 10px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') ;%>
+    <form action="/register" method="POST">
+      <div class="register_wrap">
+        <div class="box">
+          <div>
+            <h1>Register Yourself</h1>
+          </div>
+          <div class="inputs">
+            <div>
+              <input
+                type="text"
+                name="name"
+                id=""
+                placeholder="Enter Your Name"
+              />
+              <input type="email" name="email" placeholder="Enter Your Email" />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="password"
+                id=""
+                placeholder="password"
+              />
+              <input
+                type="number"
+                name="confirmPassword"
+                id=""
+                placeholder="Confirm password"
+              />
+            </div>
+          </div>
+          <div class="btns">
+            <button style="background-color: #ff0000">CANCEL</button>
+            <button type="submit" style="background-color: #4bb543">
+              SUBMIT
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

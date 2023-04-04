@@ -85,7 +85,7 @@ app.use(express.json())
 
 
 
-// =========== Delete the data DELETE
+// =========== Delete the data -    DELETE
 
 
 
@@ -99,7 +99,7 @@ app.delete("/user/:id", async (req, res) => {
         // const data = await collection.findByIdAndUpdate(_id, req.body, { new: true });
 
 
-        res.status(200).send(data);
+        res.status(204).send(data);
     } catch (e) {
         console.log(e)
     }
