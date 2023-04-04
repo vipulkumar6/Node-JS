@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import validator from 'validator'
+import bcrypt from 'bcryptjs'
 const studentSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -19,17 +20,25 @@ const studentSchema = new mongoose.Schema({
         minLength: 10
     },
     password: {
-        type: Number,
+        type: String,
         required: true,
 
     },
     confirmPassword: {
-        type: Number,
+        type: String,
         required: true,
 
     }
 })
 
+
+studentSchema.pre('save', async function (next) {
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 10);
+        this.confirmPassword = "";
+    }
+    next();
+})
 
 const collection = new mongoose.model("Studentregform", studentSchema)
 
